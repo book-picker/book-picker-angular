@@ -1,0 +1,25 @@
+<app-nav [check]=false></app-nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="card">
+          <div class="emailin">
+            <p>Enter your email: </p>
+            <input type="email" class="email">
+          </div>
+        <div class="butn">
+          <button class="send-otp">Send OTP</button>
+        </div>
+          <div class="entr">
+            <p>Enter OTP: </p>
+            <input class="otp" type="number">
+          </div>
+        <div class="butn">
+          <button routerLink="/confirm-password" class="verify">Verify</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>

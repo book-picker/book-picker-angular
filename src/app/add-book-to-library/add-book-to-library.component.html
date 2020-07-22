@@ -1,0 +1,102 @@
+<div class="container">
+  <img class="img-fluid" src="../../assets/image/undraw_Books_l33t (1).png">
+  <form [formGroup]="bookForm" (ngSubmit)="submitForm()">
+    <table class="wrapper" formGroupName="book">
+      <tr>
+        <td>
+          <span class="mini-title">Add Book:</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            <input type="number" id="isbn" class="form-control" formControlName="_id" value="id">
+            <label for="isbn" class="ph-area">ISBN No. </label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            <input type="text" id="_bookName" class="form-control" formControlName="bookName">
+            <label for="_bookName" class="ph-area">Book Name</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group ">
+            <input type="text" id="_author" class="form-control" formControlName="author">
+            <label for="_author" class="ph-area">Author</label>
+          </div>
+        </td>
+        <td>
+          <div class="form-group ">
+            <input type="number" id="_edition" class="form-control" formControlName="edition">
+            <label for="_edition" class="ph-area">Edition</label>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="form-group ">
+            <input type="text" id="_genre" class="form-control" formControlName="genre">
+            <label for="_genre" class="ph-area">Genre</label>
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input type="number" id="_Condition" class="form-control" data-toggle="tooltip" data-placement="right"
+              title="Out of 5" formControlName="condition">
+            <label for="_Condition" class="ph-area">Condition of the book</label>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            <input type="text" id="_opinion" class="form-control" formControlName="opinion">
+            <label for="_opinion" class="ph-area">Your opinion about the book</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            Where do you want to add this book ?
+            <div class="radio">
+              <label><input type="radio" name="status" value="public" formControlName="status">Public library</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="status" value="private">Private library</label>
+            </div>
+
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="form-group">
+            <input type="text" id="email" class="form-control" formControlName="email">
+            <label for="email" class="ph-area">email</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <button routerLink="/profile-page" class="add-button">Add Book</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</div>
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
