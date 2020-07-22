@@ -3,43 +3,70 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4"
-        *ngFor="let item of books | paginate: { itemsPerPage : 9, currentPage : pager.currentPage } ">
+        *ngFor="let item of displayBooks| paginate: { itemsPerPage : 9, currentPage : pager.currentPage } ; trackBy: trackItem ">
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-10">
             <div class="card">
               <div class="upper">
-                <img src="../../assets/image/1.png" class="img-responsive book-img" alt="book image" />
-              </div>
-              <div class="lower">
-                <div class="row">
-                  <div class="date">20 July 2020</div>
-                </div>
-                <div class="row">
-                  <div class="card-title"><b>500 Days of Summer</b></div>
-                </div>
-                <div class="row">
-                  <div class="card-text">{{item.title.slice(0,50)}}
+                <!-- <img src="../../assets/image/1.png" class="img-responsive book-img" alt="book image" /> -->
+                <div [ngSwitch]="item.genre">
+                  <div *ngSwitchCase="'romantic'">
+                    <img src="../../assets/image/romance.png" class="img-responsive book-img" alt="book image" />
                   </div>
-                </div>
-                <div class="row">
-                  <button routerLink="/book-info" class="request">Request</button>
+                  <div *ngSwitchCase="'fiction'">
+                    <img src="../../assets/image/fiction.png" class="img-responsive book-img" alt="book image" />
+                  </div>
+                  <div *ngSwitchCase="'educational'">
+                    <img src="../../assets/image/educational.png" class="img-responsive book-img" alt="book image" />
+                  </div>
+                  <div *ngSwitchCase="'mystery'">
+                    <img src="../../assets/image/mystery.png" class="img-responsive book-img" alt="book image" />
+                  </div>
+                  <div *ngSwitchCase="'biography'">
+                    <img src="../../assets/image/biography.png" class="img-responsive book-img" alt="book image" />
+                  </div>
+                  <div *ngSwitchCase="'poetry'">
+                    <img src="../../assets/image/poetry.png" class="img-responsive book-img" alt="book image" />
+                  </div>
+                  <div *ngSwitchCase="'sci-fi'">
+                    <img src="../../assets/image/sci-fi.png" class="img-responsive book-img" alt="book image" />
+                  </div>
+                  <div *ngSwitchDefault>
+                    <img src="../../assets/image/other.png" class="img-responsive book-img" alt="book image" />
+                  </div>
                 </div>
               </div>
             </div>
+            <div class="lower">
+              <div class="row">
+                <div class="date">{{item.time}}</div>
+              </div>
+              <div class="row">
+                <div class="card-title"><b>{{item.bookName}}</b></div>
+              </div>
+              <div class="row">
+                <div class="card-text">{{item.opinion.slice(0,50)}}
+                </div>
+              </div>
+              <div class="row">
+                <button routerLink="/book-info" class="request">Request</button>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-1"></div>
         </div>
+        <div class="col-sm-1"></div>
       </div>
     </div>
-    <div class="row">
-      <ul class="xyz" *ngIf="pager.pages && pager.pages.length">
-        <li [ngClass]="{'disabledBtn': pager.currentPage === 1}" class="list-item"
-          (click)="setPage(pager.currentPage-1)">
-          &laquo;</li>
-        <li *ngFor="let page of pager.pages" [ngClass]="{'active-page': pager.currentPage === page}" class="list-item"
-          (click)="setPage(page)">{{page}}</li>
-        <li [ngClass]="{'disabledBtn': pager.currentPage === pager.totalPages}" class="list-item"
-          (click)="setPage(pager.currentPage+1)">&raquo;</li>
-      </ul>
-    </div>
+  </div>
+  <div class="row">
+    <ul class="xyz" *ngIf="pager.pages && pager.pages.length">
+      <li [ngClass]="{'disabledBtn': pager.currentPage === 1}" class="list-item"
+        (click)="setPage(pager.currentPage - 1)">
+        &laquo;</li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{'active-page': pager.currentPage === page}" class="list-item"
+        (click)="setPage(page)">{{page}}</li>
+      <li [ngClass]="{'disabledBtn': pager.currentPage === pager.totalPages}" class="list-item"
+        (click)="setPage(pager.currentPage + 1)">&raquo;</li>
+    </ul>
+  </div>

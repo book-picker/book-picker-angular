@@ -1,7 +1,11 @@
 export interface Book {
-  albumId : Number;
-  id : Number;
-  title : String;
-  url : String;
-  thumbnailUrl : String;
+  isbn: String;
+  bookName: String;
+  author: String;
+  edition: String
+  genre: String;
+  opinion: String;
+  condition: String;
+  library: String;
+  time: String;
 }
