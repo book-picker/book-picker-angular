@@ -20,7 +20,7 @@ export class PagerService {
         if(currentPage <= 2){
           startPage = 1;
           endPage = 3;
-        } else if( currentPage+1 >= totalPages){
+        } else if( currentPage + 1 >= totalPages){
           startPage = totalPages - 2;
           endPage = totalPages;
         } else {
@@ -29,8 +29,8 @@ export class PagerService {
         }
     }
 
-    let startIndex = (currentPage - 1)*pageSize;
-    let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+    // let startIndex = (currentPage - 1)*pageSize;
+    // let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
 
     let pages = _.range(startPage, endPage + 1);
 
@@ -41,8 +41,8 @@ export class PagerService {
       totalPages: totalPages,
       startPage: startPage,
       endPage: endPage,
-      startIndex: startIndex,
-      endIndex: endIndex,
+      // startIndex: startIndex,
+      // endIndex: endIndex,
       pages: pages
     };
   }
