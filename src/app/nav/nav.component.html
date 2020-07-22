@@ -1,29 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: #6159e5;">
   <div class="container">
-    <a class="navbar-brand">The Book Picker</a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown .show"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+    <a class="navbar-brand" href="#">The Book Picker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div *ngIf=check>
-      <div class="navbar-collapse collapse" id="navbarNavDropdown" [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}">
-        <ul class="navbar-nav ml-auto" (click)="isCollapsed = !isCollapsed">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
 
           <li>
-            <form class="form-inline my-2 my-lg-0" >
-              <input class="form-control mr-sm-2" [(ngModel)]="searchword" type="search" placeholder="Search" name="search" aria-label="Search">
-              <button class="btn btn-light my-2 my-sm-0" type="submit" (click)="searchPosts()"> <i class="fa fa-search"></i> </button>
+            <form class="form-inline my-2 my-lg-0" [formGroup]="">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
+              <button class="btn btn-light my-2 my-sm-0" type="submit"> <i class="fa fa-search"></i> </button>
             </form>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-            <a class="nav-link" routerLink="/homepage" (click)="closeNotification()">Home</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Home </a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" (click)="showNotifications()">Notification</a>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/notifications" href="#">Notification</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/profile-page" (click)="closeNotification()">Profile</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
           </li>
 
         </ul>

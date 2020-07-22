@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
+import { NotificationsComponent } from 'src/app/notifications/notifications.component';
 import { SelectGenreComponent } from 'src/app/select-genre/select-genre.component';
 import { LogInComponent } from 'src/app/log-in/log-in.component';
 import { HomepageComponent } from 'src/app/homepage/homepage.component';
@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'profile-page' , component: ProfilePageComponent},
   { path: 'add-book-to-library', component: AddBookToLibraryComponent},
   { path: 'forgot-password', component: FPassComponent},
-  { path: 'confirm-password', component: CPassComponent}
+  { path: 'confirm-password', component: CPassComponent},
+  { path: 'notifications', component: NotificationsComponent},
 ];
 
 @NgModule({

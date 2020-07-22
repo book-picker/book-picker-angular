@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +30,7 @@ import { SelectGenreComponent } from './select-genre/select-genre.component';
 import { ProfileNameCoverComponent } from './profile-page/profile-name-cover/profile-name-cover.component';
 import { UserInfoComponent } from './profile-page/user-info/user-info.component';
 import { UserLibraryComponent } from './profile-page/user-library/user-library.component';
-import { HttpInerceptor } from './http-inerceptor';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { HttpInerceptor } from './http-inerceptor';
     SelectGenreComponent,
     ProfileNameCoverComponent,
     UserInfoComponent,
-    UserLibraryComponent
+    UserLibraryComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,15 +58,11 @@ import { HttpInerceptor } from './http-inerceptor';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    CookieModule.forRoot()
+    CookieModule.forRoot(),
+    MatListModule,
+    MatDialogModule,
   ],
-  providers: [
-    {
-      provide: HttpInerceptor,
-      useClass: HttpInerceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
