@@ -8,9 +8,9 @@ import { SendMail } from '../app/send-mail'
   providedIn: 'root'
 })
 export class SignupServiceService {
-  _URL = 'https://0d2329965f4b.ngrok.io/';
+  _URL = 'https://8f92fb462cb1.ngrok.io/';
 
-  constructor( private _http: HttpClient ) { }  
+  constructor( private _http: HttpClient ) { }
 
   register(userSignup: UserSignup){
     const headers = new HttpHeaders();

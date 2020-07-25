@@ -30,18 +30,6 @@ export class SignInComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  autharize(){
-    this.signupServe.autharize()
-    .subscribe(
-      response => alert("successfully verified"),
-      error => {
-        alert("not verified");
-      console.log(error);
-    }
-      
-    )
-  }
-
   onSubmit() {
     this.newUserLogin = this.loginForm.value as UserLogin;
     this.submitted = true;

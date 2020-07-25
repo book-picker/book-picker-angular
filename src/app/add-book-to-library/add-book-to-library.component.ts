@@ -11,8 +11,8 @@ import { AddBook } from '../add-book';
 })
 export class AddBookToLibraryComponent implements OnInit {
 
-  bookForm: FormGroup= new FormGroup({});
-  book: FormGroup= new FormGroup({});
+  bookForm: FormGroup = new FormGroup({});
+  book: FormGroup = new FormGroup({});
   public newbookForm: AddBook = new AddBook();
 
   constructor(
@@ -46,7 +46,7 @@ submitForm() {
     console.log(this.newbookForm);
     var Header = new HttpHeaders();
     Header.append("Content-Type", "application/json").append('Cache-Control', 'no-cache');
-    this._http.post('https://192.168.0.111:4000/addbook', JSON.stringify(this.newbookForm), { headers: Header }).subscribe(
+    this._http.post('https://de65d77576ad.ngrok.io/addbook', JSON.stringify(this.newbookForm), { headers: Header }).subscribe(
     (data) => console.log(data),
     (response) => console.log(response),
     // (error) => console.log(error)

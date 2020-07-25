@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { ReactiveFormsModule } from '@angular/forms';
@@ -53,6 +55,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
     NotificationsComponent
   ],
   imports: [
+    FormsModule,
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
